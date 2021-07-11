@@ -20,7 +20,7 @@ export default () => {
       <Hero
         heading={
           <>
-            Get all your reported stories about the Chicago Flores Twins 
+            Get all your reported stories about the Chicago Flores Twins and the Cartel Wives 
           </>
         }
         primaryButtonText="Get Started"

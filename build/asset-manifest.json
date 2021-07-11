@@ -1,35 +1,31 @@
 {
   "files": {
     "main.css": "/static/css/main.05187c9d.chunk.css",
-    "main.js": "/static/js/main.1ebb01a7.chunk.js",
-    "main.js.map": "/static/js/main.1ebb01a7.chunk.js.map",
+    "main.js": "/static/js/main.fbd3be4d.chunk.js",
+    "main.js.map": "/static/js/main.fbd3be4d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.89fa77d8.js",
     "runtime-main.js.map": "/static/js/runtime-main.89fa77d8.js.map",
     "static/css/2.b38f08e9.chunk.css": "/static/css/2.b38f08e9.chunk.css",
-    "static/js/2.3dfb493f.chunk.js": "/static/js/2.3dfb493f.chunk.js",
-    "static/js/2.3dfb493f.chunk.js.map": "/static/js/2.3dfb493f.chunk.js.map",
+    "static/js/2.301775ae.chunk.js": "/static/js/2.301775ae.chunk.js",
+    "static/js/2.301775ae.chunk.js.map": "/static/js/2.301775ae.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.b38f08e9.chunk.css.map": "/static/css/2.b38f08e9.chunk.css.map",
     "static/css/main.05187c9d.chunk.css.map": "/static/css/main.05187c9d.chunk.css.map",
-    "static/js/2.3dfb493f.chunk.js.LICENSE.txt": "/static/js/2.3dfb493f.chunk.js.LICENSE.txt",
+    "static/js/2.301775ae.chunk.js.LICENSE.txt": "/static/js/2.301775ae.chunk.js.LICENSE.txt",
     "static/media/design-illustration.415c277c.svg": "/static/media/design-illustration.415c277c.svg",
     "static/media/dot-pattern.e52f8ce4.svg": "/static/media/dot-pattern.e52f8ce4.svg",
     "static/media/flores_logo1.23996562.jpeg": "/static/media/flores_logo1.23996562.jpeg",
     "static/media/logo.68e911af.svg": "/static/media/logo.68e911af.svg",
     "static/media/menu.svg": "/static/media/menu.644fa295.svg",
     "static/media/play-circle.svg": "/static/media/play-circle.dcf880c0.svg",
-    "static/media/star-icon.c15b00d0.svg": "/static/media/star-icon.c15b00d0.svg",
-    "static/media/svg-decorator-blob-1.4b261446.svg": "/static/media/svg-decorator-blob-1.4b261446.svg",
-    "static/media/svg-decorator-blob-5.cce5050c.svg": "/static/media/svg-decorator-blob-5.cce5050c.svg",
-    "static/media/svg-decorator-blob-7.a72c1f4f.svg": "/static/media/svg-decorator-blob-7.a72c1f4f.svg",
     "static/media/team-illustration-2.76aa0427.svg": "/static/media/team-illustration-2.76aa0427.svg",
     "static/media/x.svg": "/static/media/x.6c9a4ba7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.89fa77d8.js",
     "static/css/2.b38f08e9.chunk.css",
-    "static/js/2.3dfb493f.chunk.js",
+    "static/js/2.301775ae.chunk.js",
     "static/css/main.05187c9d.chunk.css",
-    "static/js/main.1ebb01a7.chunk.js"
+    "static/js/main.fbd3be4d.chunk.js"
   ]
 }

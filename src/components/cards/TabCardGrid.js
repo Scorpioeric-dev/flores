@@ -6,9 +6,8 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import { ReactComponent as StarIcon } from "images/star-icon.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+
+
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
@@ -38,13 +37,8 @@ const CardImageContainer = styled.div`
     `}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
-const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
-const CardRating = styled.div`
-  ${tw`mr-1 text-sm font-bold flex items-end`}
-  svg {
-    ${tw`w-4 h-4 fill-current text-orange-400 mr-1`}
-  }
-`;
+
+
 
 const CardHoverOverlay = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.5);
@@ -55,12 +49,7 @@ const CardText = tw.div`p-4 text-gray-900`;
 const CardTitle = tw.h5`text-base font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
 
-const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
-  ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
-`;
-const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
-  ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
-`;
+
 
 const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
   padding-bottom: 56.25% !important;
@@ -194,7 +183,7 @@ export default ({
                   whileHover="hover"
                   animate="rest"
                 >
-                  {activeTab == "Articles" ? (
+                  {activeTab === "Articles" ? (
                     <CardImageContainer imageSrc={card.imageSrc}>
                       <CardHoverOverlay
                         variants={{

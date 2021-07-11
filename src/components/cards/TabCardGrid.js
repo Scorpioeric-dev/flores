@@ -9,6 +9,7 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as StarIcon } from "images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -19,15 +20,22 @@ const TabControl = styled.div`
   &:hover {
     ${tw`bg-gray-300 text-gray-700`}
   }
-  ${props => props.active && tw`bg-primary-500! text-gray-100!`}
+  ${(props) => props.active && tw`bg-primary-500! text-gray-100!`}
   }
 `;
 
-const TabContent = tw(motion.div)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
-const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
-const Card = tw(motion.a)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+const TabContent = tw(
+  motion.div
+)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
+const CardContainer = tw.div`mt-10  lg:w-1/2 lg:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
+const Card = tw(
+  motion.a
+)`bg-gray-300  block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
 const CardImageContainer = styled.div`
-  ${props => css`background-image: url("${props.imageSrc}");`}
+  ${(props) =>
+    css`
+      background-image: url("${props.imageSrc}");
+    `}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
 const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
@@ -42,14 +50,10 @@ const CardHoverOverlay = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.5);
   ${tw`absolute inset-0 flex justify-center items-center`}
 `;
-const CardButton = tw(PrimaryButtonBase)`text-sm`;
-
-const CardReview = tw.div`font-medium text-xs text-gray-600`;
-
+const CardButton = tw(PrimaryButtonBase)`text-sm hocus:bg-black `;
 const CardText = tw.div`p-4 text-gray-900`;
-const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
+const CardTitle = tw.h5`text-base font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
-const CardPrice = tw.p`mt-4 text-xl font-bold`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
@@ -58,95 +62,70 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
+const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
+  padding-bottom: 56.25% !important;
+  padding-top: 0px !important;
+  ${tw`rounded`}
+  iframe {
+    ${tw`rounded bg-black shadow-xl`}
+  }
+`;
+
 export default ({
   heading = "Checkout the Menu",
   tabs = {
-    Starters: [
+    Videos: [
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Veg Mixer",
-        content: "Tomato Salad & Carrot",
-        price: "$5.99",
-        rating: "5.0",
-        reviews: "87",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Macaroni",
-        content: "Cheese Pizza",
-        price: "$2.99",
-        rating: "4.8",
-        reviews: "32",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Nelli",
-        content: "Hamburger & Fries",
-        price: "$7.99",
-        rating: "4.9",
-        reviews: "89",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Jalapeno Poppers",
-        content: "Crispy Soyabeans",
-        price: "$8.99",
-        rating: "4.6",
-        reviews: "12",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Cajun Chicken",
-        content: "Roasted Chicken & Egg",
-        price: "$7.99",
-        rating: "4.2",
-        reviews: "19",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Chillie Cake",
-        content: "Deepfried Chicken",
-        price: "$2.99",
-        rating: "5.0",
-        reviews: "61",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Guacamole Mex",
-        content: "Mexican Chilli",
-        price: "$3.99",
-        rating: "4.2",
-        reviews: "95",
-        url: "#"
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Carnet Nachos",
-        content: "Chilli Crispy Nachos",
-        price: "$3.99",
-        rating: "3.9",
-        reviews: "26",
-        url: "#"
-      }
+        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        title:
+          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
+        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+      },
     ],
-    Main: getRandomCards(),
-    Soup: getRandomCards(),
-    Desserts: getRandomCards()
-  }
+    Articles: getArticles(),
+  },
 }) => {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
@@ -155,7 +134,7 @@ export default ({
    */
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
-
+  console.log(activeTab);
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -163,27 +142,30 @@ export default ({
           <Header>{heading}</Header>
           <TabsControl>
             {Object.keys(tabs).map((tabName, index) => (
-              <TabControl key={index} active={activeTab === tabName} onClick={() => setActiveTab(tabName)}>
+              <TabControl
+                key={index}
+                active={activeTab === tabName}
+                onClick={() => setActiveTab(tabName)}
+              >
                 {tabName}
               </TabControl>
             ))}
           </TabsControl>
         </HeaderRow>
-
         {tabsKeys.map((tabKey, index) => (
           <TabContent
             key={index}
             variants={{
               current: {
                 opacity: 1,
-                scale:1,
+                scale: 1,
                 display: "flex",
               },
               hidden: {
                 opacity: 0,
-                scale:0.8,
+                scale: 0.8,
                 display: "none",
-              }
+              },
             }}
             transition={{ duration: 0.4 }}
             initial={activeTab === tabKey ? "current" : "hidden"}
@@ -191,35 +173,41 @@ export default ({
           >
             {tabs[tabKey].map((card, index) => (
               <CardContainer key={index}>
-                <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
-                  <CardImageContainer imageSrc={card.imageSrc}>
-                    <CardRatingContainer>
-                      <CardRating>
-                        <StarIcon />
-                        {card.rating}
-                      </CardRating>
-                      <CardReview>({card.reviews})</CardReview>
-                    </CardRatingContainer>
-                    <CardHoverOverlay
-                      variants={{
-                        hover: {
-                          opacity: 1,
-                          height: "auto"
-                        },
-                        rest: {
-                          opacity: 0,
-                          height: 0
-                        }
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <CardButton>Buy Now</CardButton>
-                    </CardHoverOverlay>
-                  </CardImageContainer>
+                <Card
+                  className="group"
+                  href={card.url}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                >
+                  {console.log(activeTab)}
+                  {activeTab == "Videos" ? (
+                    <StyledResponsiveVideoEmbed
+                      url={card.imageSrc}
+                    ></StyledResponsiveVideoEmbed>
+                  ) : (
+                    <CardImageContainer imageSrc={card.imageSrc}>
+                      <CardHoverOverlay
+                        variants={{
+                          hover: {
+                            opacity: 1,
+                            height: "auto",
+                          },
+                          rest: {
+                            opacity: 0,
+                            height: 0,
+                          },
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <CardButton>Click to read</CardButton>
+                      </CardHoverOverlay>
+                    </CardImageContainer>
+                  )}
+
                   <CardText>
                     <CardTitle>{card.title}</CardTitle>
                     <CardContent>{card.content}</CardContent>
-                    <CardPrice>{card.price}</CardPrice>
                   </CardText>
                 </Card>
               </CardContainer>
@@ -234,88 +222,68 @@ export default ({
 };
 
 /* This function is only there for demo purposes. It populates placeholder cards */
-const getRandomCards = () => {
+const getArticles = () => {
   const cards = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Chicken Chilled",
-      content: "Chicken Main Course",
-      price: "$5.99",
-      rating: "5.0",
-      reviews: "87",
-      url: "#"
+        "https://www.latinousa.org/wp-content/uploads/2018/09/cartelwives.jpg",
+      title: "Married to the Cartel",
+      content: "Joaquin “El Chapo” Guzman is renowned around the world as the now-imprisoned leader of Mexico’s Sinaloa Cartel, described by the U.S. Justice Department as one of the most “prolific, violent and powerful” drug cartels ever.",
+      url: "https://www.latinousa.org/2018/09/18/marriedtothecartel/",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1582254465498-6bc70419b607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Samsa Beef",
-      content: "Fried Mexican Beef",
-      price: "$3.99",
-      rating: "4.5",
-      reviews: "34",
-      url: "#"
+        "https://static01.nyt.com/images/2019/07/17/universal/es/17chapo-01-ES/merlin_155762247_4136c838-8214-42ba-913a-deb8da6bb5ea-superJumbo.jpg",
+      title: "Mexico Will Seek to Extradite ‘El Chapo’ After Drug Lord’s Recapture",
+      content: "Top Story – The office of Mexico’s attorney general announced on Sunday that it has launched extradition proceedings against recaptured drug kingpin Joaquín “El Chapo” Guzmán, but the Sinaloa Cartel leader is sure to battle his transfer to the United States, where he is far less likely to escape from prison for a third time.",
+      url: "https://www.latinousa.org/2016/01/11/mexico-will-seek-to-extradite-el-chapo/",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Carnet Nachos",
-      content: "Chilli Crispy Nachos",
-      price: "$3.99",
-      rating: "3.9",
-      reviews: "26",
-      url: "#"
+        "https://assets.vogue.com/photos/5b2d0771dfb55f5d708a2c80/master/w_2560%2Cc_limit/00-story-cartel-wives.jpg",
+      title: "Two Hours in an Undisclosed Location With the Cartel Wives Whose Husbands Helped Bring Down El Chapo",
+      content: "Sometime in the last month, I was asked if I wanted to talk to two women for a story. The women had written a book, Cartel Wives, about their lives as wives of twin brothers who just so happened to be right-hand men to Joaquín “El Chapo” Guzman, the notorious head of Mexico’s Sinaloa cartel.",
+      url: "https://www.vogue.com/article/el-chapo-cartel-wives-interview",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Guacamole Mex",
-      content: "Mexican Chilli",
-      price: "$3.99",
-      rating: "4.2",
-      reviews: "95",
-      url: "#"
+        "https://pisco.meaww.com/5cffb4a0-8148-4c23-86f3-2f1b6d8e222b.png",
+      title: "Spouses of twins who turned on ‘El Chapo’ tell story of ‘Cartel Wives’",
+      content: "Mia Flores and Olivia Flores live under assumed names. To their neighbours, they are typical single mothers, their days filled with school runs and PTA meetings. But Olivia and Mia are anything but ordinary. They live in fear, hiding from a past that included wealth beyond their wildest dreams but also more danger than they ever could have imagined.",
+
+      url: "https://chicago.suntimes.com/2017/6/17/18342603/spouses-of-twins-who-turned-on-el-chapo-tell-story-of-cartel-wives",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Chillie Cake",
-      content: "Deepfried Chicken",
-      price: "$2.99",
-      rating: "5.0",
-      reviews: "61",
-      url: "#"
+        "https://1.bp.blogspot.com/-RZyqkfEuhRA/X1kToA2B0yI/AAAAAAAArbE/b6ki5JWl8fseyILG0K602jXWj69tLfj4ACLcBGAsYHQ/s1600/fflores%2Btin%2Bback%2Bin%2Bthe%2Bday%2B%25281%2529watermark.jpg",
+      title: "A dad's influence: How the Flores twins learned the drug trade at home",
+      content: "That the Flores twins would inherit their father's trade was hardly surprising given what they were exposed to at a young age. When he returned home from prison after eight years, the elder Flores taught his boys tricks they would use and improve on later.",
+      
+      url: "https://www.chicagotribune.com/news/ct-father-flores-brothers-met-20150507-story.html",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Nelli",
-      content: "Hamburger & Fries",
-      price: "$7.99",
-      rating: "4.9",
-      reviews: "89",
-      url: "#"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuJK-j_JBXL5GYIZd1Otio29nEur73ERIcw&usqp=CAU",
+      title: " Chicago hub of the Sinaloa cartel",
+      content: "Twin brothers Pedro and Margarito Flores, from Chicago's Little Village, became wholesale distributors for Mexico's infamous Sinaloa cartel but flipped on the notoriously violent drug empire and helped take down kingpin Joaquin 'El Chapo' Guzman.",
+      
+      url: "https://www.nydailynews.com/news/crime/twin-drug-kingpins-14-years-snitched-el-chapo-article-1.2093887",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Jalapeno Poppers",
-      content: "Crispy Soyabeans",
-      price: "$8.99",
-      rating: "4.6",
-      reviews: "12",
-      url: "#"
+        "https://pisco.meaww.com/df35c7c6-1130-469c-9b1a-4f5af5a8a125.635148716",
+      title: "Drug lord 'El Chapo' escapes prison using 1-mile tunnel, Mexico says",
+      content: "Mexico mounted an all-out manhunt Sunday for its most powerful drug lord, Joaquin  Guzman, who escaped from a maximum security prison through a 1.5-kilometer (1 mile) tunnel from a small opening in the shower area of his cell, according to the country's top security official.",
+      url: "https://www.capitalgazette.com/news/nation-world/ct-joaquin-el-chapo-guzman-escapes-20150712-story.html",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Cajun Chicken",
-      content: "Roasted Chicken & Egg",
-      price: "$7.99",
-      rating: "4.2",
-      reviews: "19",
-      url: "#"
-    }
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfLmr00ZV-e7va6g2hycAeohAbYaahAFlyvg&usqp=CAU",
+      title: "Chicago drug dealer who snitched on El Chapo seeks early prison release over fears he could catch coronavirus",
+      content:"Margarito Flores is requesting to be released from prison because he fears catching coronavirus behind bars"
+,
+      url: "https://www.dailymail.co.uk/news/article-8340793/Chicago-drug-dealer-snitched-El-Chapo-seeks-early-prison-release-coronavirus-fears.html"
+    },
   ];
 
   // Shuffle array

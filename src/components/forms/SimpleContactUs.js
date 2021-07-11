@@ -39,7 +39,7 @@ export default () => {
     <Container>
       <Content>
         <FormContainer>
-          <div tw="mx-auto max-w-4xl">
+          <div id="contact" tw="mx-auto max-w-4xl">
             <h2>Get in Touch </h2>
             <form action="#">
               <TwoColumn>
@@ -64,7 +64,6 @@ export default () => {
               <SubmitButton type="submit" value="Submit">Submit</SubmitButton>
             </form>
           </div>
-          <SvgDotPattern1 />
         </FormContainer>
       </Content>
     </Container>

@@ -74,6 +74,7 @@ const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
 export default ({
   heading = "Checkout the Menu",
   tabs = {
+    Articles: getArticles(),
     Videos: [
       {
         imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
@@ -82,49 +83,61 @@ export default ({
         url: "https://www.youtube.com/embed/2utQ11SU1fY",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/vKHhQzxXjT8",
         title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+          "CARTEL WIVES | Cartel Wives is the inside story of dangerous love, risky decisions, and redemption.",
+        url: "https://www.youtube.com/embed/vKHhQzxXjT8",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/OZ47_wsfCBo",
         title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+          "Wives of El Chapo Smugglers Reveal Secrets of the Mexican Drug Cartel",
+        url: "https://www.youtube.com/embed/OZ47_wsfCBo",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
-        title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/FpwDFXxlS4k",
+        title: "The Fall of El Chapo (True Crime Documentary) | Real Stories",
+        url: "https://www.youtube.com/embed/FpwDFXxlS4k",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
-        title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/pjbzIAZNezQ",
+        title: "Wives of members of El Chapo's drug cartel speak out",
+        url: "https://www.youtube.com/embed/pjbzIAZNezQ",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://abc7chicago.com/video/embed/?pid=3329472",
         title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+          "Chicago twins likely cornerstone of burgeoning case against El Chapo",
+        url: "https://abc7chicago.com/video/embed/?pid=3329472",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/KvwNLQvwf34",
         title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+          "How 2 brothers from Chicago helped convict drug lord `El Chapo`",
+        url: "https://www.youtube.com/embed/KvwNLQvwf34",
       },
       {
-        imageSrc: "https://www.youtube.com/embed/2utQ11SU1fY",
+        imageSrc: "https://www.youtube.com/embed/LHS2EtCG_gU",
         title:
-          "American Greed: The First 10 Minutes - Inside El Chapo's Empire | CNBC Prime",
-        url: "https://www.youtube.com/embed/2utQ11SU1fY",
+          "Twin brothers may have smuggled more than 6 tons of cocaine into the US on the DEA's watch",
+        url: "https://www.youtube.com/embed/LHS2EtCG_gU",
       },
     ],
-    Articles: getArticles(),
+
+    Podcasts: [
+      {
+        imageSrc:
+          "https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/566278/&share=1",
+        title: "The Star Witnesses Against El Chapo",
+        url: "https://www.wnyc.org/story/tom-shakeshaft-talks-patrick-radden-keefe-about-star-witnesses-against-el-chapo",
+      },
+      {
+        imageSrc:
+          "https://www.iheart.com/podcast/105-the-dr-oz-podcast-29387079/episode/true-crime-an-exclusive-interview-29513559/?embed=true",
+        title: "Share True Crime - An Exclusive Interview with The Cartel Wives: The Untold Story of El Chapo",
+        url: "https://www.iheart.com/podcast/105-the-dr-oz-podcast-29387079/episode/true-crime-an-exclusive-interview-29513559/",
+      },
+    ],
   },
 }) => {
   /*
@@ -176,16 +189,12 @@ export default ({
                 <Card
                   className="group"
                   href={card.url}
+                  target="_blank"
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
                 >
-                  {console.log(activeTab)}
-                  {activeTab == "Videos" ? (
-                    <StyledResponsiveVideoEmbed
-                      url={card.imageSrc}
-                    ></StyledResponsiveVideoEmbed>
-                  ) : (
+                  {activeTab == "Articles" ? (
                     <CardImageContainer imageSrc={card.imageSrc}>
                       <CardHoverOverlay
                         variants={{
@@ -203,6 +212,10 @@ export default ({
                         <CardButton>Click to read</CardButton>
                       </CardHoverOverlay>
                     </CardImageContainer>
+                  ) : (
+                    <StyledResponsiveVideoEmbed
+                      url={card.imageSrc}
+                    ></StyledResponsiveVideoEmbed>
                   )}
 
                   <CardText>
@@ -215,8 +228,6 @@ export default ({
           </TabContent>
         ))}
       </ContentWithPaddingXl>
-      <DecoratorBlob1 />
-      <DecoratorBlob2 />
     </Container>
   );
 };
@@ -228,61 +239,73 @@ const getArticles = () => {
       imageSrc:
         "https://www.latinousa.org/wp-content/uploads/2018/09/cartelwives.jpg",
       title: "Married to the Cartel",
-      content: "Joaquin “El Chapo” Guzman is renowned around the world as the now-imprisoned leader of Mexico’s Sinaloa Cartel, described by the U.S. Justice Department as one of the most “prolific, violent and powerful” drug cartels ever.",
+      content:
+        "Joaquin “El Chapo” Guzman is renowned around the world as the now-imprisoned leader of Mexico’s Sinaloa Cartel, described by the U.S. Justice Department as one of the most “prolific, violent and powerful” drug cartels ever.",
       url: "https://www.latinousa.org/2018/09/18/marriedtothecartel/",
     },
     {
       imageSrc:
         "https://static01.nyt.com/images/2019/07/17/universal/es/17chapo-01-ES/merlin_155762247_4136c838-8214-42ba-913a-deb8da6bb5ea-superJumbo.jpg",
-      title: "Mexico Will Seek to Extradite ‘El Chapo’ After Drug Lord’s Recapture",
-      content: "Top Story – The office of Mexico’s attorney general announced on Sunday that it has launched extradition proceedings against recaptured drug kingpin Joaquín “El Chapo” Guzmán, but the Sinaloa Cartel leader is sure to battle his transfer to the United States, where he is far less likely to escape from prison for a third time.",
+      title:
+        "Mexico Will Seek to Extradite ‘El Chapo’ After Drug Lord’s Recapture",
+      content:
+        "Top Story – The office of Mexico’s attorney general announced on Sunday that it has launched extradition proceedings against recaptured drug kingpin Joaquín “El Chapo” Guzmán, but the Sinaloa Cartel leader is sure to battle his transfer to the United States, where he is far less likely to escape from prison for a third time.",
       url: "https://www.latinousa.org/2016/01/11/mexico-will-seek-to-extradite-el-chapo/",
     },
     {
       imageSrc:
         "https://assets.vogue.com/photos/5b2d0771dfb55f5d708a2c80/master/w_2560%2Cc_limit/00-story-cartel-wives.jpg",
-      title: "Two Hours in an Undisclosed Location With the Cartel Wives Whose Husbands Helped Bring Down El Chapo",
-      content: "Sometime in the last month, I was asked if I wanted to talk to two women for a story. The women had written a book, Cartel Wives, about their lives as wives of twin brothers who just so happened to be right-hand men to Joaquín “El Chapo” Guzman, the notorious head of Mexico’s Sinaloa cartel.",
+      title:
+        "Two Hours in an Undisclosed Location With the Cartel Wives Whose Husbands Helped Bring Down El Chapo",
+      content:
+        "Sometime in the last month, I was asked if I wanted to talk to two women for a story. The women had written a book, Cartel Wives, about their lives as wives of twin brothers who just so happened to be right-hand men to Joaquín “El Chapo” Guzman, the notorious head of Mexico’s Sinaloa cartel.",
       url: "https://www.vogue.com/article/el-chapo-cartel-wives-interview",
     },
     {
       imageSrc:
-        "https://pisco.meaww.com/5cffb4a0-8148-4c23-86f3-2f1b6d8e222b.png",
-      title: "Spouses of twins who turned on ‘El Chapo’ tell story of ‘Cartel Wives’",
-      content: "Mia Flores and Olivia Flores live under assumed names. To their neighbours, they are typical single mothers, their days filled with school runs and PTA meetings. But Olivia and Mia are anything but ordinary. They live in fear, hiding from a past that included wealth beyond their wildest dreams but also more danger than they ever could have imagined.",
+        "https://www.chicagomag.com/wp-content/archive/Chicago-Magazine/October-2013/Sinaloa-Cartel/C201310-Sinaloa-Cartel-big.jpg",
+      title: "Why Mexico's Sinaloa Cartel Loves Selling Drugs in Chicago",
+      content:
+        "The handsome 33-year-old, nicknamed El Vicentillo (Pretty Boy Vicente), was a notorious drug capo. He was also the only son of Ismael “El Mayo” Zambada García, the No. 2 boss of Mexico’s powerful Sinaloa cartel, the biggest supplier of illegal narcotics to the United States.",
 
-      url: "https://chicago.suntimes.com/2017/6/17/18342603/spouses-of-twins-who-turned-on-el-chapo-tell-story-of-cartel-wives",
+      url: "https://www.chicagomag.com/Chicago-Magazine/October-2013/Sinaloa-Cartel/",
     },
     {
       imageSrc:
         "https://1.bp.blogspot.com/-RZyqkfEuhRA/X1kToA2B0yI/AAAAAAAArbE/b6ki5JWl8fseyILG0K602jXWj69tLfj4ACLcBGAsYHQ/s1600/fflores%2Btin%2Bback%2Bin%2Bthe%2Bday%2B%25281%2529watermark.jpg",
-      title: "A dad's influence: How the Flores twins learned the drug trade at home",
-      content: "That the Flores twins would inherit their father's trade was hardly surprising given what they were exposed to at a young age. When he returned home from prison after eight years, the elder Flores taught his boys tricks they would use and improve on later.",
-      
+      title:
+        "A dad's influence: How the Flores twins learned the drug trade at home",
+      content:
+        "That the Flores twins would inherit their father's trade was hardly surprising given what they were exposed to at a young age. When he returned home from prison after eight years, the elder Flores taught his boys tricks they would use and improve on later.",
+
       url: "https://www.chicagotribune.com/news/ct-father-flores-brothers-met-20150507-story.html",
     },
     {
       imageSrc:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuJK-j_JBXL5GYIZd1Otio29nEur73ERIcw&usqp=CAU",
       title: " Chicago hub of the Sinaloa cartel",
-      content: "Twin brothers Pedro and Margarito Flores, from Chicago's Little Village, became wholesale distributors for Mexico's infamous Sinaloa cartel but flipped on the notoriously violent drug empire and helped take down kingpin Joaquin 'El Chapo' Guzman.",
-      
+      content:
+        "Twin brothers Pedro and Margarito Flores, from Chicago's Little Village, became wholesale distributors for Mexico's infamous Sinaloa cartel but flipped on the notoriously violent drug empire and helped take down kingpin Joaquin 'El Chapo' Guzman.",
+
       url: "https://www.nydailynews.com/news/crime/twin-drug-kingpins-14-years-snitched-el-chapo-article-1.2093887",
     },
     {
       imageSrc:
-        "https://pisco.meaww.com/df35c7c6-1130-469c-9b1a-4f5af5a8a125.635148716",
-      title: "Drug lord 'El Chapo' escapes prison using 1-mile tunnel, Mexico says",
-      content: "Mexico mounted an all-out manhunt Sunday for its most powerful drug lord, Joaquin  Guzman, who escaped from a maximum security prison through a 1.5-kilometer (1 mile) tunnel from a small opening in the shower area of his cell, according to the country's top security official.",
+        "https://www.capitalgazette.com/resizer/tDbFvRo40ty-wRSyVae3fbXRzWo=/fit-in/800x533/smart/filters:fill(black)/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/VSA557BC3NBV5PCBRT6O4VQTOU.jpg",
+      title:
+        "Drug lord 'El Chapo' escapes prison using 1-mile tunnel, Mexico says",
+      content:
+        "Mexico mounted an all-out manhunt Sunday for its most powerful drug lord, Joaquin  Guzman, who escaped from a maximum security prison through a 1.5-kilometer (1 mile) tunnel from a small opening in the shower area of his cell, according to the country's top security official.",
       url: "https://www.capitalgazette.com/news/nation-world/ct-joaquin-el-chapo-guzman-escapes-20150712-story.html",
     },
     {
       imageSrc:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfLmr00ZV-e7va6g2hycAeohAbYaahAFlyvg&usqp=CAU",
-      title: "Chicago drug dealer who snitched on El Chapo seeks early prison release over fears he could catch coronavirus",
-      content:"Margarito Flores is requesting to be released from prison because he fears catching coronavirus behind bars"
-,
-      url: "https://www.dailymail.co.uk/news/article-8340793/Chicago-drug-dealer-snitched-El-Chapo-seeks-early-prison-release-coronavirus-fears.html"
+      title:
+        "Chicago drug dealer who snitched on El Chapo seeks early prison release over fears he could catch coronavirus",
+      content:
+        "Margarito Flores is requesting to be released from prison because he fears catching coronavirus behind bars",
+      url: "https://www.dailymail.co.uk/news/article-8340793/Chicago-drug-dealer-snitched-El-Chapo-seeks-early-prison-release-coronavirus-fears.html",
     },
   ];
 
